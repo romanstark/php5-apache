@@ -54,8 +54,10 @@ RUN pecl install imagick \
     && docker-php-ext-enable imagick
     
 RUN chown -R www-data:www-data /var/www
-# Create Volume
-# VOLUME ['/etc/apache2/sites-enabled','/var/www','/var/log/apache2']
+# Create Volume one in a row for compatibility with plesk docker
+VOLUME /etc/apache2/sites-enabled
+VOLUME /var/www
+VOLUME /var/log/apache2
 
 EXPOSE 80
 EXPOSE 443
