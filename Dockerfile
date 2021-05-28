@@ -55,7 +55,7 @@ RUN pecl install imagick \
     
 RUN chown -R www-data:www-data /var/www
 # Create Volume
-VOLUME ['/etc/apache2/sites-enabled','/var/www','/var/log/apache2']
+# VOLUME ['/etc/apache2/sites-enabled','/var/www','/var/log/apache2']
 
 EXPOSE 80
 EXPOSE 443
